@@ -2,13 +2,13 @@ This project is one that I took from the youtuber [Tech with Tim](https://www.yo
 
 I did two different versions 
 
-The Score version 
+The "Score" version 
   - asks the user for thier imput
   - gives the user a score and percentage of their results 
   - if they get it wrong they ask them to try again
   - pauses in between after text 
   
-The try again version 
+The "Try Again" version 
   - asks the user for thier imput
   - gives the user a score and percentage of their results 
   - if they get it wrong they ask them to try again
