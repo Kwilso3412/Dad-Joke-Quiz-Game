@@ -1,4 +1,4 @@
-This project is one that I took from the youtuber [Tech With Tim](https://www.youtube.com/watch?v=DLn3jOsNRVE&list=WL&index=54&t=1483s)
+This project is one that I took from the youtuber [Tech with Tim](https://www.youtube.com/watch?v=DLn3jOsNRVE&list=WL&index=54&t=1483s)
 
 I did two different versions 
 
@@ -14,3 +14,6 @@ The try again version
   - if they get it wrong they ask them to try again
   - if they get all right they get a secret message 
   - if they get all wrong then they are prompted "better luck next time"
+  
+  
+[Tech With Tim](https://www.youtube.com/watch?v=DLn3jOsNRVE&list=WL&index=54&t=1483s)
