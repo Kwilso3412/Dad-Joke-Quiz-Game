@@ -1,25 +1,33 @@
 import time
 
 print("Welcome to My Quiz!!")
-
-
-
-#prompts teh user if they want to play
+playing = input("Do you want to play? (Yes or no) ")
+#checks to make sure that the user enters in only letters
 while True:
-    try:
-        playing = input("Do you want to play? (Yes or no) ")
-        if playing.lower() !="no":
-            print("Awesome lets get started!!!")
-            break
-    except ValueError: 
-        print("Please enter a valid response")
+    if playing.isalpha():
+        break
     else:
-        ("Why are you here?")
+        print("Must answer yes or no")
+        playing = input("Do you want to play? (yes or no) ")
+        continue
 
+#double checks that the user only enters yes or no
+while (playing != "yes" and playing != "no"):
+    print("please enter yes or no")
+    playing = input("Do you want to play? (Yes or no) ")
+    if playing.lower() =="yes":
+        print("Awesome lets get started!!!")
+        break
+    else:
+        continue
+
+#Quits the game if they don't want to play
+if playing.lower() =="no":
+        print("Why did you come here?")
+        quit()
 #starts keeping score of the game
+else:
     Score = 0
-
-
 
 answer = input("What do sprinters eat before a race? (if not sure say idk) ")
 if answer.lower() == "nothing they fast": 
