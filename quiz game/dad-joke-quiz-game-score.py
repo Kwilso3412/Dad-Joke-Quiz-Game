@@ -1,8 +1,6 @@
 import time
 
 #puts a delay in between prompts 
-
-
 print("Welcome to My Quiz!!")
 playing = input("Do you want to play? (Yes or no) ")
 
