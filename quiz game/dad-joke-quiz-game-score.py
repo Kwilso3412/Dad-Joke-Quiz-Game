@@ -1,22 +1,28 @@
 import time
 
+#puts a delay in between prompts 
+
+
 print("Welcome to My Quiz!!")
 playing = input("Do you want to play? (Yes or no) ")
+
+
 #checks to make sure that the user enters in only letters
 while True:
     if playing.isalpha():
         break
     else:
         print("Must answer yes or no")
+        time.sleep(2)
         playing = input("Do you want to play? (yes or no) ")
         continue
 
 #double checks that the user only enters yes or no
 while (playing != "yes" and playing != "no"):
-    print("please enter yes or no")
+    print("Please enter yes or no")
+    time.sleep(2)
     playing = input("Do you want to play? (Yes or no) ")
     if playing.lower() =="yes":
-        print("Awesome lets get started!!!")
         break
     else:
         continue
@@ -32,55 +38,73 @@ else:
     Score = 0
     idk_score = 0
 
+print("Awesome lets get started!!!")
+time.sleep(2)
+
 answer = input("What do sprinters eat before a race? (if not sure say idk) ")
 if answer.lower() == "nothing they fast": 
-    print("Thats Correct!! look who has there dad hat on")
+    print("Thats Correct!! Look who has there dad hat on!")
+    time.sleep(2)
     Score += 1
 elif answer.lower() == "idk":
     print("Nothing They Fast!!!")
+    time.sleep(2)
     idk_score += 1
 else:
-    print("no nothing they fast XD come one lets see if you can get the next one" )
+    print("No nothing they fast XD Try to get the next one" )
+    time.sleep(2)
 
 answer = input("Air use to be free at the gas station, now its a $1.50. You know why? (if not sure say idk) ")
 if answer.lower() == "inflation":
     
-    print("Thats Correct!! Your really good at this do you have some kids on the way?")
+    print("Thats Correct!! Your really good at this, do you have some kids on the way?")
+    time.sleep(2)
     Score += 1
 elif answer.lower() == "idk":
-    print("Inflation!!! XD come on you will definitely get the next one")
+    print("Inflation!!! XD you'll definitely get the next one!!")
+    time.sleep(2)
     idk_score += 1
 else:
-    print("no its because of inflation XD one more you got this")
+    print("No its because of inflation XD One more you got this!!!")
+    time.sleep(2)
 
 
 answer = input("How did the man on the moon cut his hair? (if not sure say idk) ")
 if answer.lower() == "he eclipse it":
     
     print("Thats Correct!! Your definitely a father!!")
+    time.sleep(2)
     Score += 1
 elif answer.lower() == "idk":
-    print("He Eclipse it!!! XD try putting on some cargo shorts to help bring out your inner dad!!")
+    print("He Eclipse it!!! XD Try putting on some cargo shorts to help bring out your inner dad!!")
+    time.sleep(2)
     idk_score += 1
 else:
     print("Haha no he eclipse it")
+    time.sleep(2)
 
 #converts the int score into string score and tells the user their score
 str(Score)
 
-#displays message for score 
+#displays message for score and idk score
 if Score == 3:
     print("You got all the questions correct!!!")
+    time.sleep(2)
     print("Since you did so well here is one more dad joke")
+    time.sleep(2)
     print("What do you call a busy waiter? A server! XD")
-else:
-    print("Darn you didn't get all the questions go back and try again you might get a secret message")
+    time.sleep(2)
+    print("Thank you for playing!!!")
+elif Score <= 3 and idk_score <= 3:
+    print("Darn you didn't get all the questions correct :/ ")
+    time.sleep(2)
+    print("Go back and try to get all the answers correct! Theres a secret!!!")
+    time.sleep(2)
+    print("Thank you for playing!!")
 
-#displays message for idk score
-if idk_score == 3:
-    print("whoops it looks like you answered idk to all go try again to get a secret message")
-elif idk_score >= 1:
-    print("looks like you you answered idk to some of the questions go back you might get a secret message if you get them all correct!")
+#User should not see this but just in case there is something think of something when testing they will see this message
 else:
-    print("Thank you for playing!")
+    print("How are you seeing this? Go back and play correctly!!")
+    quit()
+
 
