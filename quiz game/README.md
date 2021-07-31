@@ -1,5 +1,7 @@
 This project is one that I took from the youtuber [Tech with Tim](https://www.youtube.com/watch?v=DLn3jOsNRVE&list=WL&index=54&t=1483s)
 
+if you want a full break down you can view it on [my website](https://kahwillow.com/dad-joke-score)
+
 I added a few overall things 
 
 - Added a response for both  yes or no 
