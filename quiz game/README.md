@@ -12,12 +12,12 @@ I added a few overall things
 
 I also did two different versions 
 
-The "Score" version 
+The [Score](https://kahwillow.com/dad-joke-score) version 
   - If they answered idk to all then they get the answer 
   - Different message if they answer IDK to all 
   - Different message if they answer IDK to parital 
   
-The "Try Again" version 
+The [Try Again](https://kahwillow.com/dad-joke-try-again) version 
   - Asks the user for thier imput
   - Gives the user a score and percentage of their results 
   - If they get it wrong they're asked if they want to try again
