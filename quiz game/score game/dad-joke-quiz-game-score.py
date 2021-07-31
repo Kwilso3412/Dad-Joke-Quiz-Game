@@ -29,7 +29,6 @@ while (playing != "yes" and playing != "no"):
 if playing.lower() =="no":
         print("Why did you come here?")
         quit()
-
 #starts keeping score of the game
 #keeps track of idk scores
 else:
@@ -81,9 +80,6 @@ else:
     print("Haha no he eclipse it")
     time.sleep(2)
 
-#converts the int score into string score and tells the user their score
-str(Score)
-
 #displays message for score and idk score
 if Score == 3:
     print("You got all the questions correct!!!")
@@ -93,7 +89,7 @@ if Score == 3:
     print("What do you call a busy waiter? A server! XD")
     time.sleep(2)
     print("Thank you for playing!!!")
-elif Score <= 3 and idk_score <= 3:
+elif Score < 3 and idk_score <= 3:
     print("Darn you didn't get all the questions correct :/ ")
     time.sleep(2)
     print("Go back and try to get all the answers correct! Theres a secret!!!")
