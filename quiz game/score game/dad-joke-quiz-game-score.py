@@ -1,3 +1,5 @@
+##purpose is to create a dad joke game the user can play.
+
 import time
 
 #puts a delay in between prompts 
