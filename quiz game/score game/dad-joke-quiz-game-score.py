@@ -7,19 +7,18 @@ print("Welcome to My Quiz!!")
 playing = input("Do you want to play? (Yes or no) ")
 
 #TODO print letter by letter for each sentence
-#TODO Make a loop for the user to keep playing
-#TODO add in a dictionary to hold multiple choice questions with hints
+#TODO Make a loop for the user to keep playing and tracks how many times they have won or loss
+#create a main funtion that will house all the operations to the python program. 
+#TODO Convert the dictionary to a list dictionary to hold multiple choice questions with hints
 #TODO randomize questions.
 
-
-    # clear the console when the next thing prompts
-    #
 #checks to make sure that the user enters in only letters
 while True:
     if playing.isalpha():
         break
     else:
         print("Must answer yes or no")
+        #used to delay prints to simulate a game featured
         time.sleep(2)
         playing = input("Do you want to play? (yes or no) ")
         continue
