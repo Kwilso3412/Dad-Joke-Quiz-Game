@@ -12,3 +12,11 @@ While the user is playing they can choose to answer the question or respond that
 with a compliment to keep playing. Else they are given the response. 
 
 The last aspect of the game is if the user can guess all the correct answers they are given a bonus dad joke. Else they are told about the secret bonus and to try again.
+
+
+***Update 26 Mar 2022
+
+incorperated os.system('cls') to clear the screen 
+
+Added a dictionary to create a question bank with multiple choice answers and actuall answers. 
+
