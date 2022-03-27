@@ -8,8 +8,8 @@ playing = input("Do you want to play? (Yes or no) ")
 
 #TODO print letter by letter for each sentence
 #TODO Make a loop for the user to keep playing
-#TODO add in a database of dad joke questions 
-#TODO randomize questions
+#TODO add in a dictionary to hold multiple choice questions with hints
+#TODO randomize questions.
 
 
     # clear the console when the next thing prompts
