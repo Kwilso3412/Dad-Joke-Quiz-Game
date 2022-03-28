@@ -9,6 +9,8 @@ playing = input("Do you want to play? (Yes or no) ")
 #TODO print letter by letter for each sentence
 #TODO create a main function that will house all the operations to the python program. 
 #TODO randomize questions and incorporate for asking for hints
+#TODO create a counter for how many wins and loses they user has earned 
+#TODO add instructions for how to play the game
 
 #checks to make sure that the user enters in only letters
 while True:
