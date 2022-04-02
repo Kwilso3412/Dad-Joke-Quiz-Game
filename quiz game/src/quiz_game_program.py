@@ -1,14 +1,14 @@
 ##purpose of this file is to create a program that will run the quiz game
-from question_bank_data import question_bank
-from quiz import question
-from quiz import quiz
+from question_bank_data import question_data
+from quiz import Quiz_game
+from quiz import Question
 
-import sys, os
+#import sys, os
 import time
 
 #puts a delay in between prompts 
-print("Welcome to My Quiz!!")
-playing = input("Do you want to play? (Yes or no) ")
+# print("Welcome to My Quiz!!")
+# playing = input("Do you want to play? (Yes or no) ")
 
 #TODO print letter by letter for each sentence
 #TODO create a main function that will house all the operations to the python program. 
@@ -16,100 +16,106 @@ playing = input("Do you want to play? (Yes or no) ")
 #TODO create a counter for how many wins and loses they user has earned 
 #TODO add instructions for how to play the game
 
-#checks to make sure that the user enters in only letters
-while True:
-    if playing.isalpha():
-        break
-    else:
-        print("Must answer yes or no")
-        #used to delay prints to simulate a game featured
-        time.sleep(2)
-        playing = input("Do you want to play? (yes or no)" + "\n")
-        continue
+# #checks to make sure that the user enters in only letters
+# while True:
+#     if playing.isalpha():
+#         break
+#     else:
+#         print("Must answer yes or no")
+#         #used to delay prints to simulate a game featured
+#         time.sleep(2)
+#         playing = input("Do you want to play? (yes or no)" + "\n")
+#         continue
 
-#double checks that the user only enters yes or no
-while (playing != "yes" and playing != "no"):
-    print("Please enter yes or no")
-    time.sleep(2)
-    playing = input("Do you want to play? (Yes or no)" + "\n")
-    if playing.lower() =="yes":
-        break
-    else:
-        continue
+# #double checks that the user only enters yes or no
+# while (playing != "yes" and playing != "no"):
+#     print("Please enter yes or no")
+#     time.sleep(2)
+#     playing = input("Do you want to play? (Yes or no)" + "\n")
+#     if playing.lower() =="yes":
+#         break
+#     else:
+#         continue
 
-#Quits the game if they don't want to play
-if playing.lower() =="no":
-        os.system('cls')
-        print("Why did you come here?")
-        quit()
+# #Quits the game if they don't want to play
+# if playing.lower() =="no":
+#         print("Why did you come here?")
+#         quit()
 
 
-#starts keeping score of the game
-#keeps track of idk scores
-else:
-    Score = 0
-    idk_score = 0
+# #starts keeping score of the game
+# #keeps track of idk scores
+# else:
+#     Score = 0
+#     idk_score = 0
 
-print("Awesome lets get started!!!")
-time.sleep(2)
+# print("Awesome lets get started!!!")
+# time.sleep(2)
 
 
 end_game_phrase = "no"
 continue_playing = "yes"
 
 while True:
-    os.system('cls')
     question_bank = [] 
-    for question_part in question_bank:
-        question_text = question_part["Question: "]
-        question_multiple_choice = question_part["Select your Answer: "]
-        question_answer = question_part["Answer: "]
-        question_hint = question_part["Hint: "]
-        new_question = question(question_text, question_multiple_choice,  question_answer, question_hint)
+    for question_part in question_data:
+        question_text = question_bank["question"]
+        question_multiple_choice = question_bank["select your answer"]
+        question_answer = question_bank["answer"]
+        question_hint = question_part["Hint"]
+        new_question = Question(question_text, question_multiple_choice)
         question_bank.append(new_question)
+        print(question_bank[question_part])
 
+#Starts the Quiz game
+    quiz = Quiz_game(question_bank)
 
+    while quiz.remaining_questions():
+        quiz.next_question
 
+    print("You've completed the quiz!!")
+    print(f"Your final score was: {quiz.score}/{quiz.question_number}")
+    break
     #displays message for score and idk score
-    if Score == 3:
-        os.system('cls')
-        print("You got all the questions correct!!!" + "\n")
-        time.sleep(2)
-        print("Since you did so well here is one more dad joke" + "\n")
-        time.sleep(2)
-        print("What do you call a busy waiter? A server! XD" + "\n") 
-        time.sleep(2)
-        print("Thank you for playing!!!")
+    # if Score == 3:
+    #     os.system('cls')
+    #     print("You got all the questions correct!!!" + "\n")
+    #     time.sleep(2)
+    #     print("Since you did so well here is one more dad joke" + "\n")
+    #     time.sleep(2)
+    #     print("What do you call a busy waiter? A server! XD" + "\n") 
+    #     time.sleep(2)
+    #     print("Thank you for playing!!!")
 
-    elif Score < 3 and idk_score <= 3:
-        os.system('cls')
-        print("Darn you didn't get all the questions correct :/ " + "\n")
-        time.sleep(2)
-        print("Go back and try to get all the answers correct! Theres a secret!!!"+ "\n")
-        time.sleep(2)
-        print("Thank you for playing!!")
+    # elif Score < 3 and idk_score <= 3:
+    #     os.system('cls')
+    #     print("Darn you didn't get all the questions correct :/ " + "\n")
+    #     time.sleep(2)
+    #     print("Go back and try to get all the answers correct! Theres a secret!!!"+ "\n")
+    #     time.sleep(2)
+    #     print("Thank you for playing!!")
 
-    #User should not see this but just in case there is something think of something when testing they will see this message
-    else:
-        os.system('cls')
-        print("How are you seeing this? Go back and play correctly!!" + "\n")
+    # #User should not see this but just in case there is something think of something when testing they will see this message
+    # else:
+    #     os.system('cls')
+    #     print("How are you seeing this? Go back and play correctly!!" + "\n")
 
 
-    end_of_game = input("do you still want to play?" + "\n")
+    # end_of_game = input("do you still want to play?" + "\n")
 
-    if end_of_game.lower() == end_game_phrase:
-        quit()
+    # if end_of_game.lower() == end_game_phrase:
+    #     quit()
 
-    elif end_of_game.lower() == continue_playing:
-        continue
+    # elif end_of_game.lower() == continue_playing:
+    #     continue
 
-    while (end_of_game != "yes" and end_of_game != "no"):
-        print("Please enter yes or no")
-        time.sleep(2)
-        playing = input("Do you want to play? (Yes or no)" + "\n")
-        if playing.lower() =="yes":
-            break
-        else:
-            continue
+    # while (end_of_game != "yes" and end_of_game != "no"):
+    #     print("Please enter yes or no")
+    #     time.sleep(2)
+    #     playing = input("Do you want to play? (Yes or no)" + "\n")
+    #     if playing.lower() =="yes":
+    #         break
+    #     else:
+    #         continue
 
 
