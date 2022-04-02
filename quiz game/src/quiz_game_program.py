@@ -1,4 +1,8 @@
-##purpose is to create a dad joke game the user can play.
+##purpose of this file is to create a program that will run the quiz game
+from question_bank_data import question_bank
+from quiz import question
+from quiz import quiz
+
 import sys, os
 import time
 
@@ -55,50 +59,16 @@ continue_playing = "yes"
 
 while True:
     os.system('cls')
-    answer = input("What do sprinters eat before a race? (if not sure say idk) " + "\n")
-    if answer.lower() == "nothing they fast": 
-        os.system('cls')
-        print("Thats Correct!! Look who has there dad hat on!")
-        time.sleep(2)
-        Score += 1
+    question_bank = [] 
+    for question_part in question_bank:
+        question_text = question_part["Question: "]
+        question_multiple_choice = question_part["Select your Answer: "]
+        question_answer = question_part["Answer: "]
+        question_hint = question_part["Hint: "]
+        new_question = question(question_text, question_multiple_choice,  question_answer, question_hint)
+        question_bank.append(new_question)
 
-    elif answer.lower() == "idk":
-        print("Nothing They Fast!!!")
-        time.sleep(2)
-        idk_score += 1
 
-    else:
-        print("No nothing they fast XD Try to get the next one" )
-        time.sleep(2)
-
-    os.system('cls')
-    answer = input("Air use to be free at the gas station, now its a $1.50. You know why? (if not sure say idk) " + "\n")
-    if answer.lower() == "inflation":
-        print("Thats Correct!! Your really good at this, do you have some kids on the way?")
-        time.sleep(2)
-        Score += 1
-    elif answer.lower() == "idk":
-        print("Inflation!!! XD you'll definitely get the next one!!")
-        time.sleep(2)
-        idk_score += 1
-    else:
-        print("No its because of inflation XD One more you got this!!!")
-        time.sleep(2) 
-
-    os.system('cls')
-    answer = input("How did the man on the moon cut his hair? (if not sure say idk)"+ "\n")
-    if answer.lower() == "he eclipse it":
-        print("Thats Correct!! Your definitely a father!!")
-        time.sleep(2)
-        Score += 1
-    elif answer.lower() == "idk":
-        print("He Eclipse it!!! XD Try putting on some cargo shorts to help bring out your inner dad!!")
-        time.sleep(2)
-        idk_score += 1
-    else:
-        os.system('cls')
-        print("Haha no he eclipse it")
-        time.sleep(2)
 
     #displays message for score and idk score
     if Score == 3:
