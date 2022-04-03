@@ -1,5 +1,5 @@
 ##purpose of this file is to create a program that will run the quiz game
-from question_bank_data import question_data
+from question_bank_data import question_list
 from quiz import Quiz_game
 from quiz import Question
 
@@ -57,25 +57,45 @@ end_game_phrase = "no"
 continue_playing = "yes"
 
 while True:
-    question_bank = [] 
-    for question_part in question_data:
-        question_text = question_bank["question"]
-        question_multiple_choice = question_bank["select your answer"]
-        question_answer = question_bank["answer"]
-        question_hint = question_part["Hint"]
-        new_question = Question(question_text, question_multiple_choice)
-        question_bank.append(new_question)
-        print(question_bank[question_part])
+    #stores the question and their answers in objects
+    questions = [
+        Question(question_list[0], "D"),
+        Question(question_list[1], "B"),
+        Question(question_list[2], "B"),
+        Question(question_list[3], "A"),
+        Question(question_list[4], "C"),
+        Question(question_list[5], "B"),
+        Question(question_list[6], "B"),
+        Question(question_list[7], "D"),
+        Question(question_list[8], "C"),
+        Question(question_list[9], "B"),
+        Question(question_list[10], "A"),
+        Question( question_list[11], "C"),
+        ]
 
+#this wil loop through the questions and then print out the question
+    def run_test(questions):
+        for question in questions:
+            answer = input(question.question_list)
+            if answer == question.answer:
+                score += 1
+
+    run_test(questions)
+    
 #Starts the Quiz game
-    quiz = Quiz_game(question_bank)
+    #quiz = Quiz_game(question_list)
 
-    while quiz.remaining_questions():
-        quiz.next_question
+    
 
-    print("You've completed the quiz!!")
-    print(f"Your final score was: {quiz.score}/{quiz.question_number}")
-    break
+    #while quiz.remaining_questions():
+        #quiz.next_question
+
+    #print("You've completed the quiz!!")
+    #print(f"Your final score was: {quiz.score}/{quiz.question_number}")
+
+    
+
+
     #displays message for score and idk score
     # if Score == 3:
     #     os.system('cls')
