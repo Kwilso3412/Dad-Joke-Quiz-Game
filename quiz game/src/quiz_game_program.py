@@ -3,27 +3,29 @@ from question_bank_data import question_bank
 from quiz import Quiz_game
 from quiz import Question
 
+#import sys, os
 import time
 import os, sys
 #puts a delay in between prompts 
-print("Welcome to My Quiz!! \n\n")
+print("Welcome to My Quiz!!")
+print 
 print("Welcome to my python quiz game! In this game you will be given a question and its multiple choice answers \n"
         "Select the answer you think that fits and if you are correct you will score a point! \n" 
         "At the end of the game you will be given a score of how well you did and if you unlocked the secret jok! \n"
-    )
+)
 playing = input("Do you want to play? (Yes or no) \n")
 
 #TODO create a main function that will house all the operations to the python program. 
 #TODO randomize questions and incorporate for asking for hints
 #TODO create a counter for how many wins and loses they user has earned 
+#TODO add instructions for how to play the game
 
 #checks to make sure that the user enters in only letters
 while True:
     if playing.isalpha():
         break
     else:
-        os.system('clear')
-        print("Must answer yes or no \n")
+        print("Must answer yes or no")
         #used to delay prints to simulate a game featured
         time.sleep(2)
         playing = input("Do you want to play? (yes or no) \n")
@@ -41,7 +43,7 @@ while (playing != "yes" and playing != "no"):
 
 #Quits the game if they don't want to play
 if playing.lower() =="no":
-    os.system('clear')
+    os.system('cls')
     print("Why did you come here?")
     quit()
 
@@ -51,7 +53,7 @@ if playing.lower() =="no":
 else:
     Score = 0
     idk_score = 0
-os.system('clear')
+os.system('cls')
 print("Awesome lets get started!!!")
 time.sleep(2)
 
@@ -65,22 +67,26 @@ while True:
         Question(question_bank[0], "D"),
         Question(question_bank[1], "B"),
         Question(question_bank[2], "B"),
-        Question(question_bank[3], "A"),
-        Question(question_bank[4], "C"),
-        Question(question_bank[5], "B"),
-        Question(question_bank[6], "B"),
-        Question(question_bank[7], "D"),
-        Question(question_bank[8], "C"),
-        Question(question_bank[9], "B"),
-        Question(question_bank[10], "A"),
-        Question(question_bank[11], "C"),
+        Question(question_list[3], "A"),
+        Question(question_list[4], "C"),
+        Question(question_list[5], "B"),
+        Question(question_list[6], "B"),
+        Question(question_list[7], "D"),
+        Question(question_list[8], "C"),
+        Question(question_list[9], "B"),
+        Question(question_list[10], "A"),
+        Question( question_list[11], "C"),
         ]
 
+    load_question(questions)
+    
 #Starts the Quiz game
     quiz = Quiz_game(questions)
 
+    
+
     while quiz.remaining_questions():
-        quiz.load_questions
+        quiz.load_question
         
     print("You've completed the quiz!!")
     print(f"Your final score was: {quiz.score}/{quiz.question_number}")
