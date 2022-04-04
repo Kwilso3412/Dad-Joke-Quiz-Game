@@ -10,17 +10,17 @@ class Quiz_game:
         self.question_list = question_list
 
 #this method wil loop through the questions and then print out the question
-    def load_question(questions):
+    def load_questions(self, questions):
         self.question_number += 1
         for question in questions:
-            current_question = question.question_list
+            current_question = question.question_bank
             answer = input(current_question)
             self.check_answer(current_question, answer)
 
 #used for checking the answer and if correct it gives a score
     def check_answer(self, current_question, answer):
         point = 0
-        if user_answer ==  answer:
+        if current_question ==  answer:
             point += 1
         else:
             point += 0
