@@ -7,8 +7,8 @@ from quiz import Question
 import time
 
 #puts a delay in between prompts 
-# print("Welcome to My Quiz!!")
-# playing = input("Do you want to play? (Yes or no) ")
+print("Welcome to My Quiz!!")
+playing = input("Do you want to play? (Yes or no) ")
 
 #TODO print letter by letter for each sentence
 #TODO create a main function that will house all the operations to the python program. 
@@ -16,41 +16,41 @@ import time
 #TODO create a counter for how many wins and loses they user has earned 
 #TODO add instructions for how to play the game
 
-# #checks to make sure that the user enters in only letters
-# while True:
-#     if playing.isalpha():
-#         break
-#     else:
-#         print("Must answer yes or no")
-#         #used to delay prints to simulate a game featured
-#         time.sleep(2)
-#         playing = input("Do you want to play? (yes or no)" + "\n")
-#         continue
+#checks to make sure that the user enters in only letters
+while True:
+    if playing.isalpha():
+        break
+    else:
+        print("Must answer yes or no")
+        #used to delay prints to simulate a game featured
+        time.sleep(2)
+        playing = input("Do you want to play? (yes or no)" + "\n")
+        continue
 
-# #double checks that the user only enters yes or no
-# while (playing != "yes" and playing != "no"):
-#     print("Please enter yes or no")
-#     time.sleep(2)
-#     playing = input("Do you want to play? (Yes or no)" + "\n")
-#     if playing.lower() =="yes":
-#         break
-#     else:
-#         continue
+#double checks that the user only enters yes or no
+while (playing != "yes" and playing != "no"):
+    print("Please enter yes or no")
+    time.sleep(2)
+    playing = input("Do you want to play? (Yes or no)" + "\n")
+    if playing.lower() =="yes":
+        break
+    else:
+        continue
 
-# #Quits the game if they don't want to play
-# if playing.lower() =="no":
-#         print("Why did you come here?")
-#         quit()
+#Quits the game if they don't want to play
+if playing.lower() =="no":
+    print("Why did you come here?")
+    quit()
 
 
-# #starts keeping score of the game
-# #keeps track of idk scores
-# else:
-#     Score = 0
-#     idk_score = 0
+#starts keeping score of the game
+#keeps track of idk scores
+else:
+    Score = 0
+    idk_score = 0
 
-# print("Awesome lets get started!!!")
-# time.sleep(2)
+print("Awesome lets get started!!!")
+time.sleep(2)
 
 
 end_game_phrase = "no"
