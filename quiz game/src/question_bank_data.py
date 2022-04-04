@@ -1,6 +1,6 @@
 #This dictionary is used to make a question bank for the dad joke quiz game
 #questions and its multiple choice options
-question_list = ["What do sprinters eat before a race? \n A) Celery \n B) A protein shake \n C) Carrots \n D) Nothing they fast \n\n" ,
+question_bank = ["What do sprinters eat before a race? \n A) Celery \n B) A protein shake \n C) Carrots \n D) Nothing they fast \n\n" ,
     #answer "D" 
     "Air use to be free at the gas station, now its a $1.50. You know why? \n A) Hard times \n B) Inflation \n C) Greedy Gas station owners \n D) The trying times of 1856 \n\n", 
     # ansewe "B" 

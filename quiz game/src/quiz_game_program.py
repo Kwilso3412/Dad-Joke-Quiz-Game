@@ -1,16 +1,20 @@
 ##purpose of this file is to create a program that will run the quiz game
-from question_bank_data import question_list
+from question_bank_data import question_bank
 from quiz import Quiz_game
 from quiz import Question
 
 #import sys, os
 import time
-
+import os, sys
 #puts a delay in between prompts 
 print("Welcome to My Quiz!!")
-playing = input("Do you want to play? (Yes or no) ")
+print 
+print("Welcome to my python quiz game! In this game you will be given a question and its multiple choice answers \n"
+        "Select the answer you think that fits and if you are correct you will score a point! \n" 
+        "At the end of the game you will be given a score of how well you did and if you unlocked the secret jok! \n"
+       )
+playing = input("Do you want to play? (Yes or no) \n")
 
-#TODO print letter by letter for each sentence
 #TODO create a main function that will house all the operations to the python program. 
 #TODO randomize questions and incorporate for asking for hints
 #TODO create a counter for how many wins and loses they user has earned 
@@ -24,7 +28,7 @@ while True:
         print("Must answer yes or no")
         #used to delay prints to simulate a game featured
         time.sleep(2)
-        playing = input("Do you want to play? (yes or no)" + "\n")
+        playing = input("Do you want to play? (yes or no) \n")
         continue
 
 #double checks that the user only enters yes or no
@@ -39,6 +43,7 @@ while (playing != "yes" and playing != "no"):
 
 #Quits the game if they don't want to play
 if playing.lower() =="no":
+    os.system('cls')
     print("Why did you come here?")
     quit()
 
@@ -48,7 +53,7 @@ if playing.lower() =="no":
 else:
     Score = 0
     idk_score = 0
-
+os.system('cls')
 print("Awesome lets get started!!!")
 time.sleep(2)
 
@@ -73,27 +78,18 @@ while True:
         Question( question_list[11], "C"),
         ]
 
-#this wil loop through the questions and then print out the question
-    def run_test(questions):
-        for question in questions:
-            answer = input(question.question_list)
-            if answer == question.answer:
-                score += 1
-
-    run_test(questions)
+    load_question(questions)
     
 #Starts the Quiz game
-    #quiz = Quiz_game(question_list)
+    quiz = Quiz_game(questions)
 
     
 
-    #while quiz.remaining_questions():
-        #quiz.next_question
-
-    #print("You've completed the quiz!!")
-    #print(f"Your final score was: {quiz.score}/{quiz.question_number}")
-
-    
+    while quiz.remaining_questions():
+        quiz.load_question
+        
+    print("You've completed the quiz!!")
+    print(f"Your final score was: {quiz.score}/{quiz.question_number}")
 
 
     #displays message for score and idk score

@@ -1,4 +1,5 @@
 #This class is used to create the quiz object and corresponding methods
+from question_bank_data import question_bank
 
 class Quiz_game:
     def __init__(self, question_list):
@@ -8,17 +9,16 @@ class Quiz_game:
         #This will be used to hold the question bank
         self.question_list = question_list
 
-#method used for getting the current  question
-    def next_question (self,questions):
+#this method wil loop through the questions and then print out the question
+    def load_question(questions):
         self.question_number += 1
-        current_question = question.question_list
         for question in questions:
-            user_answer = input(f"{self.question_number: {current_question.question_list}}")
-        self.check_answer(user_answer, current_question.answer)
-
+            current_question = question.question_list
+            answer = input(current_question)
+            self.check_answer(current_question, answer)
 
 #used for checking the answer and if correct it gives a score
-    def check_answer(self, user_answer, answer):
+    def check_answer(self, current_question, answer):
         point = 0
         if user_answer ==  answer:
             point += 1
