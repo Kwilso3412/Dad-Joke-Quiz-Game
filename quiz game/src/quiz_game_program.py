@@ -1,17 +1,15 @@
-##purpose of this file is to create a program that will run the quiz game
+#imports Objects and lists
 from question_bank_data import question_bank
-from quiz import Quiz_game
 from quiz import Question
 
-#import sys, os
+#import imports
 import time
-import os, sys
+import os
+import random
 #puts a delay in between prompts 
-print("Welcome to My Quiz!!")
-print 
-print("Welcome to my python quiz game! In this game you will be given a question and its multiple choice answers \n"
+print("Welcome to my python quiz game! \n\nIn this game you will be given a question and its multiple choice answers \n"
         "Select the answer you think that fits and if you are correct you will score a point! \n" 
-        "At the end of the game you will be given a score of how well you did and if you unlocked the secret jok! \n"
+        "At the end of the game you will be given a score of how well you did and if you unlocked the secret joke! \n"
 )
 playing = input("Do you want to play? (Yes or no) \n")
 
@@ -47,16 +45,11 @@ if playing.lower() =="no":
     print("Why did you come here?")
     quit()
 
-
 #starts keeping score of the game
 #keeps track of idk scores
-else:
-    Score = 0
-    idk_score = 0
 os.system('cls')
 print("Awesome lets get started!!!")
 time.sleep(2)
-
 
 end_game_phrase = "no"
 continue_playing = "yes"
@@ -67,33 +60,52 @@ while True:
         Question(question_bank[0], "D"),
         Question(question_bank[1], "B"),
         Question(question_bank[2], "B"),
-        Question(question_list[3], "A"),
-        Question(question_list[4], "C"),
-        Question(question_list[5], "B"),
-        Question(question_list[6], "B"),
-        Question(question_list[7], "D"),
-        Question(question_list[8], "C"),
-        Question(question_list[9], "B"),
-        Question(question_list[10], "A"),
-        Question( question_list[11], "C"),
+        Question(question_bank[3], "A"),
+        Question(question_bank[4], "C"),
+        Question(question_bank[5], "B"),
+        Question(question_bank[6], "B"),
+        Question(question_bank[7], "D"),
+        Question(question_bank[8], "C"),
+        Question(question_bank[9], "B"),
+        Question(question_bank[10], "A"),
+        Question(question_bank[11], "C"),
         ]
 
-    load_question(questions)
-    
-#Starts the Quiz game
-    quiz = Quiz_game(questions)
 
-    
 
-    while quiz.remaining_questions():
-        quiz.load_question
-        
-    print("You've completed the quiz!!")
-    print(f"Your final score was: {quiz.score}/{quiz.question_number}")
 
+#function to run the game and clear screen for each question for readability
+    def quiz(questions):
+        os.system('cls')
+        score = 0
+        x = 1
+        while (x != 5):
+            for question in questions:
+                print(f"Question number: {x}")
+                answer = input(question.question_list)
+                if answer.isalpha():
+                    if answer.upper() == question.answer:
+                        score += 1
+                        x += 1
+                        print("Thats the correct answer!!! \n")
+                        time.sleep(2)
+                        os.system('cls')
+                    else:
+                        print("Darn that is not the correct answer :/ \n\n" + "The correct answer is " + question.answer +"\n")
+                        time.sleep(2)
+                        os.system('cls')
+                        x += 1
+                else:
+                    print("Please enter the correct response the correct response \n")
+                    x += 1
+                    continue
+            break
+
+#Calls the function
+    quiz(questions)
 
     #displays message for score and idk score
-    # if Score == 3:
+    # if Score == 5:
     #     os.system('cls')
     #     print("You got all the questions correct!!!" + "\n")
     #     time.sleep(2)
@@ -103,7 +115,7 @@ while True:
     #     time.sleep(2)
     #     print("Thank you for playing!!!")
 
-    # elif Score < 3 and idk_score <= 3:
+    # elif Score < 5:
     #     os.system('cls')
     #     print("Darn you didn't get all the questions correct :/ " + "\n")
     #     time.sleep(2)
