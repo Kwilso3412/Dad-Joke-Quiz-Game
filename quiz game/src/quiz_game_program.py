@@ -56,22 +56,21 @@ continue_playing = "yes"
 
 while True:
     #stores the question and their answers in objects
-    questions = [
-        Question(question_bank[0], "D"),
-        Question(question_bank[1], "B"),
-        Question(question_bank[2], "B"),
-        Question(question_bank[3], "A"),
-        Question(question_bank[4], "C"),
-        Question(question_bank[5], "B"),
-        Question(question_bank[6], "B"),
-        Question(question_bank[7], "D"),
-        Question(question_bank[8], "C"),
-        Question(question_bank[9], "B"),
-        Question(question_bank[10], "A"),
-        Question(question_bank[11], "C"),
-        ]
+    Question = question_bank()
+    q1 = (question_bank[0], "D"),
+    q2 = (question_bank[1], "B"),
+    q3 = (question_bank[2], "B"),
+    q4 = (question_bank[3], "A"),
+    q5 = (question_bank[4], "C"),
+    q6 = (question_bank[5], "B"),
+    q7 = (question_bank[6], "B"),
+    q8 = (question_bank[7], "D"),
+    q9 = (question_bank[8], "C"),
+    q10 = (question_bank[9], "B"),
+    q11 = (question_bank[10], "A"),
+    q12 = (question_bank[11], "C"),
 
-
+    question_bank = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12]
 
 
 #function to run the game and clear screen for each question for readability
@@ -79,30 +78,29 @@ while True:
         os.system('cls')
         score = 0
         x = 1
-        while (x != 5):
-            for question in questions:
-                print(f"Question number: {x}")
-                answer = input(question.question_list)
-                if answer.isalpha():
-                    if answer.upper() == question.answer:
-                        score += 1
-                        x += 1
-                        print("Thats the correct answer!!! \n")
-                        time.sleep(2)
-                        os.system('cls')
-                    else:
-                        print("Darn that is not the correct answer :/ \n\n" + "The correct answer is " + question.answer +"\n")
-                        time.sleep(2)
-                        os.system('cls')
-                        x += 1
-                else:
-                    print("Please enter the correct response the correct response \n")
+        for question in questions:
+            print(f"Question number: {x}")
+            answer = input(random.sample(question.question_bank), 5)
+            if answer.isalpha():
+                if answer.upper() == question.answer:
+                    score += 1
                     x += 1
-                    continue
+                    print("Thats the correct answer!!! \n")
+                    time.sleep(2)
+                    os.system('cls')
+                else:
+                    print("Darn that is not the correct answer :/ \n\n" + "The correct answer is " + question.answer +"\n")
+                    time.sleep(2)
+                    os.system('cls')
+                    x += 1
+            else:
+                print("Please enter the correct response the correct response \n")
+                x += 1
+                continue
             break
 
 #Calls the function
-    quiz(questions)
+    quiz(question_bank)
 
     #displays message for score and idk score
     # if Score == 5:
