@@ -1,7 +1,7 @@
 #This class is used to create the quiz object and corresponding methods
 
 #question class is used for creating question object and corresponding methods
-class Question:
-    def __init__(self, question_list, answer):
-        self.question_list = question_list
+class Multiple_Choice:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
         self.answer = answer

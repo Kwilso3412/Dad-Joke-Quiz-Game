@@ -1,6 +1,6 @@
 #imports Objects and lists
-from question_bank_data import question_bank
-from quiz import Question
+from question_bank_data import question_prompt
+from multiple_choice import Multiple_Choice
 
 #import imports
 import time
@@ -47,101 +47,90 @@ if playing.lower() =="no":
 
 #starts keeping score of the game
 #keeps track of idk scores
-os.system('cls')
+os.system('clear')
 print("Awesome lets get started!!!")
 time.sleep(2)
 
-end_game_phrase = "no"
-continue_playing = "yes"
-
 while True:
     #stores the question and their answers in objects
-    Question = question_bank()
-    q1 = (question_bank[0], "D"),
-    q2 = (question_bank[1], "B"),
-    q3 = (question_bank[2], "B"),
-    q4 = (question_bank[3], "A"),
-    q5 = (question_bank[4], "C"),
-    q6 = (question_bank[5], "B"),
-    q7 = (question_bank[6], "B"),
-    q8 = (question_bank[7], "D"),
-    q9 = (question_bank[8], "C"),
-    q10 = (question_bank[9], "B"),
-    q11 = (question_bank[10], "A"),
-    q12 = (question_bank[11], "C"),
-
-    question_bank = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12]
+    questions = [
+    Multiple_Choice(question_prompt[0], "B"),
+    Multiple_Choice(question_prompt[1], "D"),
+    Multiple_Choice(question_prompt[2], "C"),
+    Multiple_Choice(question_prompt[3], "B"),
+    Multiple_Choice(question_prompt[4], "A"),
+    ]
 
 
 #function to run the game and clear screen for each question for readability
-    def quiz(questions):
-        os.system('cls')
-        score = 0
-        x = 1
-        for question in questions:
+    def multiple_choice_quiz(questions):
+        # stop_playing = "no"
+        # continue_playing = "yes"
+        end_of_game = ""      #initializes the end game code 
+        while (end_of_game != "yes" and end_of_game != "no"):
+            score = 0
+            x = 1
             print(f"Question number: {x}")
-            answer = input(random.sample(question.question_bank), 5)
-            if answer.isalpha():
-                if answer.upper() == question.answer:
-                    score += 1
-                    x += 1
-                    print("Thats the correct answer!!! \n")
-                    time.sleep(2)
-                    os.system('cls')
+            for current_question in questions:
+                answer = input(current_question.prompt)
+                if answer.isalpha():
+                    if answer.upper() == current_question.answer:
+                        score += 1
+                        x += 1
+                        print("Current score: " + str(score))
+                        print("Thats the correct answer!!! \n")
+                        time.sleep(2)
+                        
+                    else:
+                        x += 1
+                        print("Current score: " + str(score))
+                        print("Darn that is not the correct answer :/ \n\n" + "The correct answer is " + current_question.answer +"\n")
+                        time.sleep(2)
+                        print(score)
                 else:
-                    print("Darn that is not the correct answer :/ \n\n" + "The correct answer is " + question.answer +"\n")
-                    time.sleep(2)
-                    os.system('cls')
-                    x += 1
-            else:
-                print("Please enter the correct response the correct response \n")
-                x += 1
-                continue
-            break
+                    print("Please enter the correct response the correct response \n")
+                    continue
+                break
+            # while (score != 5) or (x == 5):
+            #     #displays message for score
+            #     if score == 5:
+            #             os.system('cls')
+            #             print("You got all the questions correct!!!" + "\n")
+            #             time.sleep(2)
+            #             print("Since you did so well here is one more dad joke" + "\n")
+            #             time.sleep(2)
+            #             print("What do you call a busy waiter? A server! XD" + "\n") 
+            #             time.sleep(2)
+            #             print("Thank you for playing!!!")
+            #     elif (score < 5):
+            #         os.system('cls')
+            #         print("Darn you didn't get all the questions correct :/ " + "\n")
+            #         time.sleep(2)
+            #         print("Go back and try to get all the answers correct! Theres a secret!!!"+ "\n")
+            #         time.sleep(2)
+            #         print("Thank you for playing!!")
+            #     #User should not see this but just in case there is something think of something when testing they will see this message
+            #     else:
+            #         os.system('cls')
+            #         print("How are you seeing this? Go back and play correctly!!" + "\n")
+                    
+            #         end_of_game = input("do you still want to play?" + "\n")
+            #         if end_of_game.lower() == stop_playing:
+            #             quit()
+            #         elif end_of_game.lower() == continue_playing:
+            #             continue
+            #         while (end_of_game != "yes" and end_of_game != "no"):
+            #             print("Please enter yes or no")
+            #             time.sleep(2)
+            #             playing = input("Do you want to play? (Yes or no)" + "\n")
+            #             if playing.lower() =="yes":
+            #                 break
+            #             else:
+            #                 continue
+
+
+
 
 #Calls the function
-    quiz(question_bank)
-
-    #displays message for score and idk score
-    # if Score == 5:
-    #     os.system('cls')
-    #     print("You got all the questions correct!!!" + "\n")
-    #     time.sleep(2)
-    #     print("Since you did so well here is one more dad joke" + "\n")
-    #     time.sleep(2)
-    #     print("What do you call a busy waiter? A server! XD" + "\n") 
-    #     time.sleep(2)
-    #     print("Thank you for playing!!!")
-
-    # elif Score < 5:
-    #     os.system('cls')
-    #     print("Darn you didn't get all the questions correct :/ " + "\n")
-    #     time.sleep(2)
-    #     print("Go back and try to get all the answers correct! Theres a secret!!!"+ "\n")
-    #     time.sleep(2)
-    #     print("Thank you for playing!!")
-
-    # #User should not see this but just in case there is something think of something when testing they will see this message
-    # else:
-    #     os.system('cls')
-    #     print("How are you seeing this? Go back and play correctly!!" + "\n")
-
-
-    # end_of_game = input("do you still want to play?" + "\n")
-
-    # if end_of_game.lower() == end_game_phrase:
-    #     quit()
-
-    # elif end_of_game.lower() == continue_playing:
-    #     continue
-
-    # while (end_of_game != "yes" and end_of_game != "no"):
-    #     print("Please enter yes or no")
-    #     time.sleep(2)
-    #     playing = input("Do you want to play? (Yes or no)" + "\n")
-    #     if playing.lower() =="yes":
-    #         break
-    #     else:
-    #         continue
-
+    multiple_choice_quiz(questions)
 
