@@ -1,15 +1,15 @@
 #This dictionary is used to make a question bank for the dad joke quiz game
 #questions and its multiple choice options
-question_prompt = [
-    "What do you call a factory that makes okay products? \n A) A dollar store supplier \n B) A satisfactory \n C) Your average factory \n D) Walmart \n\n",
+question_bank = [
+    "Question 1: \n What do you call a factory that makes okay products? \n A) A dollar store supplier \n B) A satisfactory \n C) Your average factory \n D) Walmart \n\n",
     #Answer "B" 
-    "What did the janitor say when he jumped out of the closet? \n A) Were out of bleach \n B) I wasn't napping! \n C) Who locked me in there  \n D) Supplies! \n\n",
+    "Question 2: \n What did the janitor say when he jumped out of the closet? \n A) Were out of bleach \n B) I wasn't napping! \n C) Who locked me in there  \n D) Supplies! \n\n",
     #Answer "D", 
-    "What did one wall say to the other? \n A) How many wholes are they going to put in us? \n B) Hey is your paint dry yet \n C) I'll meet you at the corner \n D) I don't like this new color on us \n\n",
+    "Question 3: \n What did one wall say to the other? \n A) How many wholes are they going to put in us? \n B) Hey is your paint dry yet \n C) I'll meet you at the corner \n D) I don't like this new color on us \n\n",
     #Answer "C"
-    "What did the zero say to the eight? \n A) Why did you let 7 eat 9  \n B) That belt looks good on you \n C) So are you just infinity standing up \n D) Me and one are going to make 10 \n\n",
+    "Question 4: \n What did the zero say to the eight? \n A) Why did you let 7 eat 9  \n B) That belt looks good on you \n C) So are you just infinity standing up \n D) Me and one are going to make 10 \n\n",
     #Answer "B" 
-    "What do you call a poor Santa Claus? \n A) St. Nickel-less \n B) A man who's job was automated \n C) Fired from coca-cola \n D) Divorced from Mrs. Claus and she got the workshop \n\n",
+    "Question 5: \n What do you call a poor Santa Claus? \n A) St. Nickel-less \n B) A man who's job was automated \n C) Fired from coca-cola \n D) Divorced from Mrs. Claus and she got the workshop \n\n",
     # Answer "A"
 ]
 
