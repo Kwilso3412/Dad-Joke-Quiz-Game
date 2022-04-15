@@ -60,15 +60,16 @@ questions.append(MC_Quiz(question_bank[2], "C"))
 questions.append(MC_Quiz(question_bank[3], "B"))
 questions.append(MC_Quiz(question_bank[4], "A"))
 
-score = 0
-stop_playing = "no"
-continue_playing = "yes"
+
+stop_playing = "no"   #phrase used for ending the game
+continue_playing = "yes" #phrase for continuing to play
 end_of_game = ""      #initializes the end game code 
 
-#starts the game
-while (end_of_game != "no"):
+#starts the game in a psuedo do while loop
+while True:
+    score = 0 #keeps score of the game and resets the score when teh loop starts again
     for current_question in questions:
-        answer = input(current_question.prompt)
+        answer = input(current_question.prompt) 
         if answer.isalpha():
             #if they guess correctly 
             if current_question.answer == answer.upper():
@@ -77,7 +78,7 @@ while (end_of_game != "no"):
                 score += 1
                 print("Current score " + str(score) + "\n")
             #if they guess incorrectly
-            else :
+            else:
                 os.system('clear')
                 print("Darn that was not teh correct answer \n\n" + "The correct answer was: " + current_question.answer + "\n\n")
                 print("Current score " + str(score) + "\n")
@@ -85,41 +86,36 @@ while (end_of_game != "no"):
         else:
             print("Incorrect please enter a leeter \n")
             print("Current score " + str(score) + "\n")
-    #grades the quiz 
-    #TODO need to fix the end game phrase
-    while (score != 5):
+        #Grading of the quiz 
         #if they guess all of the correct answers
-        if score == 5:
-                os.system('clear')
-                print("You got all the questions correct!!!" + "\n")
-                time.sleep(2)
-                print("Since you did so well here is one more dad joke" + "\n")
-                time.sleep(2)
-                print("What do you call a busy waiter? A server! XD" + "\n") 
-                time.sleep(2)
-                print("Thank you for playing!!!")
-        #if they didn't guess all the correct answers
-        elif (score < 5):
+    if score == 5:
             os.system('clear')
-            print("Darn you didn't get all the questions correct :/ " + "\n")
+            print("You got all the questions correct!!!" + "\n")
             time.sleep(2)
-            print("Go back and try to get all the answers correct! Theres a secret!!!"+ "\n")
+            print("Since you did so well here is one more dad joke" + "\n")
             time.sleep(2)
-            print("Thank you for playing!!")
-        #User should not see this but just in case there is something think of something when testing they will see this message
+            print("What do you call a busy waiter? A server! XD" + "\n") 
+            time.sleep(2)
+            print("Thank you for playing!!!")
+    #if they didn't guess all the correct answers
+    elif (score < 5):
+        os.system('clear')
+        print("Darn you didn't get all the questions correct :/ " + "\n")
+        time.sleep(2)
+        print("Go back and try to get all the answers correct! Theres a secret!!!"+ "\n")
+        time.sleep(2)
+        print("Thank you for playing!!" + "\n")
+#prompts the user if they want to play again then cycles back to the top of the while loop
+    end_of_game = input("do you want to play again? (yes or no)" + "\n")
+    if end_of_game.lower() == stop_playing:
+        quit()
+    elif end_of_game.lower() == continue_playing:
+        continue
+    while (end_of_game != "yes" and end_of_game != "no"):
+        print("Please enter yes or no")
+        time.sleep(2)
+        playing = input("Do you want to play? (Yes or no)" + "\n")
+        if playing.lower() =="yes":
+            break
         else:
-            os.system('clear')
-            print("How are you seeing this? Go back and play correctly!!" + "\n")
-        end_of_game = input("do you still want to play? (yes or no)" + "\n")
-        if end_of_game.lower() == stop_playing:
-            quit()
-        elif end_of_game.lower() == continue_playing:
             continue
-        while (end_of_game != "yes" and end_of_game != "no"):
-            print("Please enter yes or no")
-            time.sleep(2)
-            playing = input("Do you want to play? (Yes or no)" + "\n")
-            if playing.lower() =="yes":
-                break
-            else:
-                continue
